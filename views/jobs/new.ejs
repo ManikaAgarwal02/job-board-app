@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Job</title>
+</head>
+<body>
+
+    <h1>Post a New Job</h1>
+
+    <form action="/jobs" method="POST">
+
+        <label>Job Title</label>
+        <input type="text" name="title" required>
+        <br><br>
+
+        <label>Company Name</label>
+        <input type="text" name="company" required>
+        <br><br>
+
+        <label>Location</label>
+        <input type="text" name="location" required>
+        <br><br>
+
+        <label>Salary</label>
+        <input type="number" name="salary">
+        <br><br>
+
+        <label>Description</label>
+        <br>
+        <textarea name="description" rows="5" cols="30"></textarea>
+        <br><br>
+
+        <button type="submit">Post Job</button>
+
+    </form>
+
+</body>
+</html>
