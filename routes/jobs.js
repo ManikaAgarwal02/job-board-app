@@ -1,4 +1,6 @@
 const express = require("express");
+const job=require("../models/jobs");
+const jobs = require("../models/jobs");
 
 const router = express.Router();
 
@@ -8,15 +10,19 @@ router.get("/new", (req, res) => {
     res.render("jobs/new");
 });
 
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
+    const newJob= new job(req.body);
+    await newJob.save();
 
-    console.log(req.body);
+  
 
     res.redirect("/jobs");
 });
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
 
-    res.render("jobs/index");
+    const jobs = await job.find();
+
+    res.render("jobs/index", { jobs });
 });
 
 module.exports = router;
