@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><%= job.title %></h1>
+
+    <p><strong>Company:</strong> <%= job.company %></p>
+
+    <p><strong>Location:</strong> <%= job.location %></p>
+
+    <p><strong>Salary:</strong> ₹<%= job.salary %></p>
+
+    <p><strong>Description:</strong></p>
+    <p><%= job.description %></p>
+
+    <a href="/jobs">Back</a>
+    <form action="/jobs/<%= job._id %>/delete" method="POST">
+      <button>Delete Job</button>
+    </form>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 const express = require("express");
 const job=require("../models/jobs");
-const jobs = require("../models/jobs");
+const jobsController = require("../controllers/jobs");
 
 const router = express.Router();
 
@@ -24,5 +24,6 @@ router.get("/", async (req, res) => {
 
     res.render("jobs/index", { jobs });
 });
-
+router.get("/:id", jobsController.showJob);
+router.post("/:id/delete", jobsController.deleteJob);
 module.exports = router;
