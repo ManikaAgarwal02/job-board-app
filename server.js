@@ -1,9 +1,14 @@
 const express = require("express");
+
 const app = express();
+
 
 require("dotenv").config();
 
 app.use(express.urlencoded({ extended: true }));
+const methodOverride = require("method-override");
+
+app.use(methodOverride("_method"));
 
 const connectDB = require("./config/db");
 
@@ -14,6 +19,7 @@ connectDB();
 
 // EJS Setup
 app.set("view engine", "ejs");
+
 
 // Routes
 app.use("/jobs", jobrouter);

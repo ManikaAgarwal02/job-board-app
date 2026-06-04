@@ -26,4 +26,8 @@ router.get("/", async (req, res) => {
 });
 router.get("/:id", jobsController.showJob);
 router.post("/:id/delete", jobsController.deleteJob);
+router.get("/:id/edit", jobsController.renderEditForm);
+
+router.get("/:id", jobsController.showJob);
+router.put("/:id", jobsController.updateJob);
 module.exports = router;
